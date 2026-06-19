@@ -1,45 +1,34 @@
-import { Toaster } from './components/ui/sonner';
-import LoginForm from './login/LoginForm';
-import RegisterForm from './register/RegisterForm';
-import { Route, Routes } from 'react-router-dom';
-import Navbar from './navbar/Navbar';
-import UsersPage from './users/UsersPage';
-import HomePage from './home/HomePage';
-import BlogsPage from './blogs/BlogsPage';
-import ContactPage from './contact/ContactPage';
+import React from "react";
+import Draggable from "react-draggable";
 
-const App = () => {
+export default function App() {
   return (
-    <main>
-      <Navbar/>
-      <Routes>
-        <Route 
-          path="/" 
-          element={<LoginForm/>}
-        />
-        <Route
-          path="/registerpage"
-          element={<RegisterForm/>}
-        />
-        <Route
-          path="/homepage"
-          element={<HomePage/>}
-        />
-        <Route
-          path='/userspage'
-          element={<UsersPage/>}
-        />
-        <Route
-          path='/contactpage'
-          element={<ContactPage/>}
-        />
-        <Route 
-          path='/blogspage' 
-          element={<BlogsPage/>}/>
-      </Routes>
-      <Toaster richColors />
-    </main>
-  )
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f0f0f0",
+      }}
+    >
+      <Draggable>
+        <div
+          style={{
+            width: 200,
+            padding: 20,
+            background: "#3498db",
+            color: "white",
+            cursor: "move",
+            borderRadius: 10,
+            textAlign: "center",
+            fontSize: 20,
+            userSelect: "none",
+          }}
+        >
+          Drag Me
+        </div>
+      </Draggable>
+    </div>
+  );
 }
-
-export default App;
